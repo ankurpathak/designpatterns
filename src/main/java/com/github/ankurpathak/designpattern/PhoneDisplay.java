@@ -1,5 +1,7 @@
 package com.github.ankurpathak.designpattern;
 
+
+//Concrete Observer
 public class PhoneDisplay implements IObserver, IDisplay {
 
     private final WeatherStation weatherStation;

@@ -3,9 +3,10 @@ package com.github.ankurpathak.designpattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherStation implements IObservable {
 
-    private final List<IObserver> observers;
+//Concrete Observable
+public class WeatherStation extends AbstractObservable implements IObservable {
+
 
     private int tempearature;
 
@@ -20,25 +21,7 @@ public class WeatherStation implements IObservable {
     }
 
     public WeatherStation() {
-        this.observers = new ArrayList<>();
     }
 
-    @Override
-    public void addObserver(IObserver observer) {
-        if (observer != null)
-            this.observers.add(observer);
-    }
 
-    @Override
-    public void removeObserver(IObserver observer) {
-        if (!CollectionUtil.isEmpty(observers))
-            if (observer != null)
-                observers.remove(observer);
-    }
-
-    @Override
-    public void broadcast() {
-        if (!CollectionUtil.isEmpty(observers))
-            observers.forEach(IObserver::update);
-    }
 }

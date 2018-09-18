@@ -1,5 +1,6 @@
 package com.github.ankurpathak.designpattern;
 
+//Observable
 public interface IObservable {
     void addObserver(IObserver observer);
 
